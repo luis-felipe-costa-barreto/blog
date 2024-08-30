@@ -1,7 +1,80 @@
 {% extends 'base.html' %}
 {% block main %}
-    {% for jogo in jogos %}
-        <p>{{jogo.nome}}</p>
-        <img src="{{jogo.imagem.url}}">
-    {% endfor %}
+    <h1 class="h">Jogos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Genero</th>
+                <th>Tema</th>
+                <th>Imagem</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for jogo in jogos %}
+                <tr>
+                    <td>{{jogo.nome}}</td>
+                    <td>{{jogo.genero}}</td>
+                    <td>{{jogo.tema}}</td>
+                    <td><img src="{{jogo.imagem.url}}"></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h1 class="h">Interesses</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Nível</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for interesse in interesses %}
+                <tr>
+                    <td>{{interesse.nome}}</td>
+                    <td>{{interesse.descricao}}</td>
+                    <td>{{interesse.nivel}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h1 class="h">Cursos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Finalização</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for curso in cursos %}
+                <tr>
+                    <td>{{curso.nome}}</td>
+                    <td>{{curso.descricao}}</td>
+                    <td>{{curso.finalizacao}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <style>
+        img{
+            max-width: 100px;
+            max-height: 150px;
+        }
+        table, th, td{
+            border: 3px solid black;
+            text-align: center;
+        }
+        table, .h{
+            margin: auto;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        thead{
+            background-color: cadetblue;
+        }
+    </style>
 {% endblock %}

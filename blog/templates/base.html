@@ -6,11 +6,50 @@
     <title>Document</title>
 </head>
 <body>
-    <header style="display: flex; gap: 10px; background-color: cadetblue;">
-        <a href="{% url 'index' %}" style="color: white; text-decoration: none;">Início</a>
-        <a href="{% url 'sobre' %}" style="color: white; text-decoration: none;">Sobre</a>
+    <header>
+        <div>
+            <a href="{% url 'index' %}">Início</a>
+            <a href="{% url 'sobre' %}">Sobre</a>
+        </div>
+        <h1>Costa's Blog</h1>
     </header>
     {% block main %}
     {% endblock %}
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            min-height: 100vh;
+        }
+        header{
+            background-color: cadetblue;
+            width: 100vw;
+            padding: 20px 30px;
+            border-bottom: 5px solid rgb(80, 119, 121);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        header a{
+            color: white;
+            text-decoration: none;
+            font-size: x-large;
+            transition: 0.5s;
+        }
+        header a:hover{
+            color: rgb(206, 190, 190);
+        }
+        header div{
+            display: flex;
+            gap: 25px;
+        }
+        header h1{
+            position: absolute;
+            right: 3%;
+            top: 0px;
+            color: white;
+        }
+    </style>
 </body>
 </html>

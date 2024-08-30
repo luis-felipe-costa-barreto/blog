@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 {% block main %}
-    {% for curso in cursos %}
-        <p>{{curso.nome}}</p>
-    {% endfor %}
+    <p>Eu me chamo Luís Felipe Costa Barreto, tenho 18 anos, sou estudante do 4º ano do ensino médio e moro em Pau dos Ferros - RN, apesar de ter nascido em Natal. Gosto de jogos e animes, assim como andar com os meus amigos. Alguns dos meus cursos são:</p>
+    <ul>
+        {% for curso in cursos %}
+            <li>{{curso.nome}}</li>
+        {% endfor %}
+    </ul>
+    <style>
+        p{
+            margin: 20px;
+        }
+    </style>
 {% endblock %}
